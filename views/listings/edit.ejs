@@ -1,7 +1,7 @@
 <% layout("layouts/boilerplate") %>
 
 <body>
-    <a href="/listings/<%= listing._id %>"><button class="btn btn-secondary mt-2">Back</button></a>
+    <a href="/<%= listing._id %>"><button class="btn btn-secondary mt-2">Back</button></a>
 
     <div class="row">
         <div class="col-10 offset-1">
@@ -9,7 +9,7 @@
                 <h3 class="mb-4 fw-bold">Edit your Listing</h3>
 
                 <form
-                    action="/listings/<%= listing._id %>?_method=PUT"
+                    action="/<%= listing._id %>?_method=PUT"
                     method="post"
                     class="needs-validation"
                     enctype="multipart/form-data"

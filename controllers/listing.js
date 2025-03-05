@@ -21,7 +21,7 @@ module.exports.showListingDetails = async (req, res) => {
     // Handling case if listing does not found.
     if (!listing) {
         req.flash("error", "Requested list does not exist!");
-        res.redirect("/listings");
+        res.redirect("/");
     }
     res.render("../views/listings/show.ejs", { listing });
 };
@@ -34,7 +34,7 @@ module.exports.saveNewListing = async (req, res, next) => {
     newListing.image = { url, filename };
     await newListing.save();
     req.flash("success", "New Listing Added!");
-    res.redirect("/listings");
+    res.redirect("/");
 };
 
 // New Form to Edit Listing.
@@ -45,7 +45,7 @@ module.exports.editListingForm = async (req, res) => {
     // Handling case if editing list does not found.
     if (!listing) {
         req.flash("error", "Requested editing list does not exist!");
-        res.redirect("/listings");
+        res.redirect("/");
     }
 
     let previewImage = listing.image.url.replace("/upload", "/upload/c_auto,h_200,w_400");
@@ -64,7 +64,7 @@ module.exports.updateListing = async (req, res) => {
         await listing.save();
     }
     req.flash("success", "Listing Updated!");
-    res.redirect(`/listings/${id}`);
+    res.redirect(`/${id}`);
 };
 
 // Delete Lising.
@@ -72,5 +72,5 @@ module.exports.deleteListing = async (req, res) => {
     const { id } = req.params;
     await Listing.findByIdAndDelete(id);
     req.flash("success", "Listing Deleted!");
-    res.redirect(`/listings`);
+    res.redirect(`/`);
 };

@@ -13,7 +13,7 @@ module.exports.addReview = async (req, res) => {
     await listing.save();
 
     req.flash("success", "New Review Added!");
-    res.redirect(`/listings/${listing._id}`);
+    res.redirect(`/${listing._id}`);
 };
 
 // Delete Review Route Callback.
@@ -24,5 +24,5 @@ module.exports.deleteReview = async (req, res) => {
     await Review.findByIdAndDelete(reviewId);
 
     req.flash("success", "Review Deleted!");
-    res.redirect(`/listings/${id}`);
+    res.redirect(`/${id}`);
 };

@@ -49,10 +49,10 @@
         <% for (let listing of listings) { %>
 
         <!-- Making clickable card by wrapping in side anchor tag. -->
-        <a href="/listings/<%= listing._id %>" class="listing-link">
+        <a href="/<%= listing._id %>" class="listing-link">
             <div class="card col listing-card" style="width: 18.5rem">
                 <img
-                    src=" <%= listing.image.url %>"
+                    src="<%= listing.image.url %>"
                     class="card-img-top"
                     alt="Card Image"
                     style="height: 15rem" />

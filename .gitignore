@@ -1,5 +1,6 @@
-#.gitignore # Only Legents do this.
+.gitignore # Only Legents do this.
 .env
 node_modules/
 **/.DS_Store
 .vscode/
+README.md

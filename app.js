@@ -79,9 +79,9 @@ app.use((req, res, next) => {
 });
 
 // Express Routers
-app.use("/listings", listingRouter);
-app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
+app.use("/", listingRouter);
+app.use("/reviews/:id", reviewRouter);
 
 // Middlewares
 app.all("*", (req, res, next) => {

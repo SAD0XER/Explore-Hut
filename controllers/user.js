@@ -17,7 +17,7 @@ module.exports.saveSignupUser = async (req, res) => {
         req.login(registeredUser, (error) => {
             if (error) return next(error);
             req.flash("success", "Welcome to Explore Hut!");
-            res.redirect("/listings");
+            res.redirect("/");
         });
     } catch (error) {
         req.flash("error", error.message);
@@ -34,7 +34,7 @@ module.exports.loginUserForm = (req, res) => {
 module.exports.saveLoginUser = async (req, res) => {
     req.flash("success", "Login successful!");
     // let redirectUrl = res.locals.redirectUrl || "/listings"; // Redirecting to '/listings' if 'res.locals.redirectUrl' is not undefined.
-    res.redirect(res.locals.redirectUrl || "/listings");
+    res.redirect(res.locals.redirectUrl || "/");
 };
 
 // Logout User Route Callback.
@@ -42,6 +42,6 @@ module.exports.logoutUser = (req, res, next) => {
     req.logout((error) => {
         if (error) return next(error);
         req.flash("success", "Logout successful.");
-        res.redirect("/listings");
+        res.redirect("/");
     });
 };

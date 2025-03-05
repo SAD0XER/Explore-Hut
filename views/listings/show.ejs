@@ -1,7 +1,7 @@
 <% layout("layouts/boilerplate") %>
 
 <body>
-    <a href="/listings"><button class="btn btn-secondary mt-2">Back</button></a>
+    <a href="/"><button class="btn btn-secondary mt-2">Back</button></a>
 
     <div class="row">
         <div class="col col-10 offset-1">
@@ -23,10 +23,10 @@
                 <!-- Checking for Authorized User -->
                 <% if (currentUser && currentUser._id.equals(listing.owner._id)) { %>
                 <form
-                    action="/listings/<%= listing._id%>?_method=DELETE"
+                    action="/<%= listing._id%>?_method=DELETE"
                     method="post"
                     class="d-flex justify-content-between">
-                    <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark border-0 px-5 w-25">Edit</a>
+                    <a href="/<%= listing._id %>/edit" class="btn btn-dark border-0 px-5 w-25">Edit</a>
                     <button class="btn btn-danger px-5 w-25">Delete</button>
                 </form>
                 <% } %>
@@ -42,7 +42,7 @@
             <h4 class="mb-0 fs-4"><b>Rate this place</b></h4>
             <small class="text-secondary">Tell others what you think.</small>
             <form
-                action="/listings/<%= listing.id %>/reviews"
+                action="/reviews/<%= listing.id %>"
                 method="POST"
                 class="needs-validation px-3"
                 novalidate>
@@ -103,7 +103,7 @@
                         <!-- Checking User is Authorized to delete Review or not. -->
                         <% if (currentUser && currentUser._id.equals(review.author._id)) { %>
                         <form
-                            action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
+                            action="/reviews/<%= listing._id %>/<%= review._id %>?_method=DELETE"
                             method="post">
                             <button class="btn btn-sm btn-danger">Delete</button>
                         </form>
