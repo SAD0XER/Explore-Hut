@@ -7,7 +7,7 @@ module.exports.isLoggedIn = (req, res, next) => {
     if (!req.isAuthenticated()) {
         req.session.redirectUrl = req.originalUrl; // Storing original URL in the session cookies to redirect back to it later.
         req.flash("error", "Signup or login to create a new post!");
-        return res.redirect("/login");
+        return res.redirect("/user/login");
     }
     next();
 };

@@ -7,7 +7,7 @@ const multer = require("multer"); // pkg to parse 'multipart/form-data', used to
 const { storage } = require("../config/cloudConfig.js");
 const upload = multer({ storage }); // creates destination folder to store uploaded files.
 
-// New Listing Form Route: /listings/new - To create a new listing.
+// New Listing Form Route: /new - To create a new listing.
 router.get("/new", isLoggedIn, listingController.newListingForm);
 
 // New form Route: /listings/:id/edit - To edit listing.
