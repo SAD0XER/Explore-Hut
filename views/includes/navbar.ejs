@@ -1,12 +1,16 @@
 <nav class="navbar navbar-expand-md bg-light border-bottom sticky-top">
     <div class="container-fluid">
-    <a class="navbar-brand mx-4" href="/"><i class="fa-regular fa-compass"></i></a>
+    <a class="navbar-brand mx-4" href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" width="40" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path fill="#ff385c" d="M480 0c-17.7 0-32 14.3-32 32l0 160 0 320 64 0 0-320 112 0c8.8 0 16-7.2 16-16l0-128c0-8.8-7.2-16-16-16L512 32c0-17.7-14.3-32-32-32zM416 159L276.8 39.7c-12-10.3-29.7-10.3-41.7 0l-224 192C1 240.4-2.7 254.5 2 267.1S18.6 288 32 288l32 0 0 192c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l0-96c0-17.7 14.3-32 32-32l64 0c17.7 0 32 14.3 32 32l0 96c0 17.7 14.3 32 32 32l64.7 0 .2 0-1 0 0-353z" />
+        </svg>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav fw-bold">
-            <a class="nav-link" href="/">Explore</a>
+            <a class="nav-link" href="/">Explore Hut</a>
         </div>
         <div class="navbar-nav m-auto">
             <form class="d-flex" role="search">
@@ -20,10 +24,10 @@
         <a class="nav-link" href="/new">Add Your Hut</a>
 
         <% if (!currentUser) { %>
-            <a class="nav-link" href="/login">Log In</a>
-            <a class="nav-link" href="/signup">Sign Up</a>
+            <a class="nav-link" href="/user/login">Log In</a>
+            <a class="nav-link" href="/user/signup">Sign Up</a>
         <% } else { %>
-            <a class="nav-link" href="/logout">Log Out</a>
+            <a class="nav-link" href="/user/logout">Log Out</a>
         <% } %>
     </div>
 </nav>
