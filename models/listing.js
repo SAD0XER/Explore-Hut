@@ -18,6 +18,10 @@ const listingSchema = new Schema({
     country: String,
     reviews: [{ type: Schema.Types.ObjectId, ref: "Review" }],
     owner: { type: Schema.Types.ObjectId, ref: "User" },
+    category: {
+        type: String,
+        enum: ["Amazing Views", "Trending", "Bed & Breakfast", "Arctic", "Camping", "Amazing Pools", "Castle", "Farms", "Rooms", "Treehouse", "Countryside", "Top of the World", "Beachfront", "Lakefront", "Island", "Top cities", "Topical", "Beach", "Lake"]
+    }
 });
 
 // Post Mongoose Middleware
