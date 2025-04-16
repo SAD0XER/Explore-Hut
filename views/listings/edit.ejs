@@ -43,9 +43,45 @@
                         <img src="<%= previewImage %>" class="card-img-top object-fit-cover show-img" alt="Listing Image" />
                     </div>
 
-                    <div class="col-10 offset-1 mb-4">
-                        <label for="image" class="form-label fw-bold">Upload New Image</label>
-                        <input type="file" name="listing[image]" id="image" class="form-control border border-2 border-secondary-subtle" />
+                    <div class="row">
+                        <div class="mb-4 col-md-6">
+                            <label for="image" class="form-label fw-bold">Upload New Image</label>
+                            <input
+                                type="file"
+                                name="listing[image]"
+                                id="image"
+                                class="form-control border border-2 border-secondary-subtle" />
+                        </div>
+
+                        <div class="mb-4 col-md-6">
+                            <label for="category" class="form-label fw-bold">Choose Property Type</label>
+                            <select
+                                name="listing[category]"
+                                id="category"
+                                class="form-control border border-2 border-secondary-subtle"
+                                required>
+                                <option value="<%= listing.category %>" disabled selected><%= listing.category %></option>
+                                <option value="Amazing Pools">Amazing Pools</option>
+                                <option value="Amazing Views">Amazing Views</option>
+                                <option value="Arctic">Arctic</option>
+                                <option value="Beach">Beach</option>
+                                <option value="Beachfront">Beachfront</option>
+                                <option value="Bed & Breakfast">Bed & Breakfast</option>
+                                <option value="Camping">Camping</option>
+                                <option value="Castle">Castle</option>
+                                <option value="Countryside">Countryside</option>
+                                <option value="Farms">Farms</option>
+                                <option value="Island">Island</option>
+                                <option value="Lake">Lake</option>
+                                <option value="Lakefront">Lakefront</option>
+                                <option value="Rooms">Rooms</option>
+                                <option value="Top cities">Top cities</option>
+                                <option value="Top of the World">Top of the World</option>
+                                <option value="Topical">Topical</option>
+                                <option value="Treehouse">Treehouse</option>
+                                <option value="Trending">Trending</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="row">
@@ -61,7 +97,19 @@
                             <div class="invalid-feedback">Enter valid price!</div>
                         </div>
 
-                        <div class="mb-4 col-md-8">
+                        <div class="mb-4 col-md-4">
+                            <label for="location" class="form-label fw-bold">Location</label>
+                            <input
+                                type="text"
+                                name="listing[location]"
+                                id="location"
+                                value="<%= listing.location %>"
+                                class="form-control border border-2 border-secondary-subtle"
+                                required />
+                            <div class="invalid-feedback">Enter valid location!</div>
+                        </div>
+
+                        <div class="mb-4 col-md-4">
                             <label for="country" class="form-label fw-bold">Country</label>
                             <input
                                 type="text"
@@ -74,21 +122,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-4">
-                        <label for="location" class="form-label fw-bold">Location</label>
-                        <input
-                            type="text"
-                            name="listing[location]"
-                            id="location"
-                            value="<%= listing.location %>"
-                            class="form-control border border-2 border-secondary-subtle"
-                            required />
-                        <div class="invalid-feedback">Enter valid location!</div>
-                    </div>
-
-                    <button class="btn btn-dark w-100 fw-bold border-0 edit-listing-btn">
-                        Edit
-                    </button>
+                    <button class="btn btn-dark w-100 fw-bold border-0 edit-listing-btn">Edit</button>
                 </form>
             </div>
         </div>
