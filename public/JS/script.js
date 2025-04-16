@@ -22,6 +22,52 @@
     });
 })();
 
+// JavaScript for Category Slider Buttons.
+// const slider = document.getElementById('slider');
+// const leftBtn = document.querySelector('.left-nav-arrow');
+// const rightBtn = document.querySelector('.right-nav-arrow');
+
+// const scrollAmount = 300;
+
+// rightBtn.addEventListener('click', () => {
+//     slider.scrollLeft += scrollAmount;
+// });
+
+// leftBtn.addEventListener('click', () => {
+//     slider.scrollLeft -= scrollAmount;
+// });
+
+// JavaScript for Category Slider Buttons
+const slider = document.getElementById('slider');
+const leftBtn = document.querySelector('.left-nav-arrow');
+const rightBtn = document.querySelector('.right-nav-arrow');
+
+const scrollAmount = 300;
+
+// Function to toggle arrow visibility
+function updateArrowVisibility() {
+    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+    leftBtn.style.display = slider.scrollLeft > 0 ? 'block' : 'none';
+    rightBtn.style.display = slider.scrollLeft < maxScrollLeft ? 'block' : 'none';
+}
+
+// Scroll event listeners
+rightBtn.addEventListener('click', () => {
+    slider.scrollLeft += scrollAmount;
+    setTimeout(updateArrowVisibility, 500); // slight delay for smooth transition
+});
+
+leftBtn.addEventListener('click', () => {
+    slider.scrollLeft -= scrollAmount;
+    setTimeout(updateArrowVisibility, 500);
+});
+
+// Trigger check on scroll and load
+slider.addEventListener('scroll', updateArrowVisibility);
+window.addEventListener('load', updateArrowVisibility);
+
+
 // JavaScript for Tax Switch Toggle.
 let taxSwitchToggle = document.getElementById("flexSwitchCheckDefault");
 let texSwitchToggle = () => {

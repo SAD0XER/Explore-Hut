@@ -1,23 +1,71 @@
 #filter-tax-switch-container {
     display: inline-flex;
     margin: 2rem 0;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.filter {
-    display: inline-block;
-    margin: 0 1rem;
-    text-align: center;
-    opacity: 0.75;
+/* Category Section */
+.category-slider-container {
+    position: relative;
+    margin-right: 1rem;
+    overflow: hidden;
+    width: 75%;
+    display: block;
 }
-.filter:hover {
+
+.category-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+}
+
+.category-container::-webkit-scrollbar {
+    display: none; /* Chrome */
+}
+
+.category {
+    opacity: 0.75;
+    margin: 0 0.5rem;
+    text-align: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.category:hover {
     opacity: initial;
     cursor: pointer;
 }
 
-.filter small {
+.category small {
     display: block;
 }
 
+/* Category Slider Buttons */
+.navigation-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: none;
+    border-radius: 50%;
+    border: solid 0.1px grey;
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.left-nav-arrow {
+    left: 0;
+}
+
+.right-nav-arrow {
+    right: 0;
+}
+
+/* Tax Switch Section */
 .tax-toggle-container {
     display: flex;
     align-items: center;
@@ -25,6 +73,7 @@
     border-radius: 0.5rem;
     padding: 0.25rem 1rem;
 }
+
 .tax-toggle-container:hover {
     border-color: initial;
 }
