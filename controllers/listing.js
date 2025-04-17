@@ -67,10 +67,17 @@ module.exports.updateListing = async (req, res) => {
     res.redirect(`/${id}`);
 };
 
-// Delete Lising.
+// Delete Listing.
 module.exports.deleteListing = async (req, res) => {
     const { id } = req.params;
     await Listing.findByIdAndDelete(id);
     req.flash("success", "Listing Deleted!");
     res.redirect(`/`);
 };
+
+// Filter Listing by Category.
+module.exports.filterListing = async (req, res) => {
+    const { category } = req.query;
+    const filteredListing = await Listing.find({ category });
+    res.render("../views/listings/index.ejs", { listings: filteredListing });
+}

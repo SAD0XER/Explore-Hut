@@ -20,7 +20,7 @@ const listingSchema = new Schema({
     owner: { type: Schema.Types.ObjectId, ref: "User" },
     category: {
         type: String,
-        enum: ["Amazing Views", "Trending", "Bed & Breakfast", "Arctic", "Camping", "Amazing Pools", "Castle", "Farms", "Rooms", "Treehouse", "Countryside", "Top of the World", "Beachfront", "Lakefront", "Island", "Top cities", "Topical", "Beach", "Lake"]
+        enum: ["Amazing Views", "Trending", "Bed & Breakfasts", "Arctic", "Camping", "Amazing Pools", "Castle", "Farms", "Rooms", "Treehouse", "Countryside", "Top of the World", "Beachfront", "Lakefront", "Island", "Top cities", "Topical", "Beach", "Lake"]
     }
 });
 

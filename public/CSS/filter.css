@@ -21,6 +21,11 @@
     scrollbar-width: none; /* Firefox */
 }
 
+.category-container a {
+    text-decoration: none;
+
+}
+
 .category-container::-webkit-scrollbar {
     display: none; /* Chrome */
 }
@@ -32,6 +37,7 @@
     flex-shrink: 0;
     cursor: pointer;
     user-select: none;
+    color: black;
 }
 
 .category:hover {
