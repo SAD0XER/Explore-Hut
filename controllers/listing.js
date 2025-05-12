@@ -80,4 +80,20 @@ module.exports.filterListing = async (req, res) => {
     const { category } = req.query;
     const filteredListing = await Listing.find({ category });
     res.render("../views/listings/index.ejs", { listings: filteredListing });
-}
+};
+
+// Search Route using search box.
+module.exports.searchListing = async (req, res) => {
+    const { location } = req.query;
+    const searchedListing = await Listing.find({
+        location: { $regex: location, $options: "i" }
+    });
+
+    // Handling if searched listings not found.
+    if (searchedListing.length === 0) {
+        req.flash("error", "Searched Listing Not Available");
+        res.redirect("/");
+    }
+
+    res.render("listings/index.ejs", { listings: searchedListing });
+};
