@@ -13,9 +13,9 @@
             <a class="nav-link" href="/">Explore Hut</a>
         </div>
         <div class="navbar-nav m-auto">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2 search-box" type="search" placeholder="Search destinations" aria-label="Search">
-                <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;<strong>Search</strong></button>
+            <form class="d-flex" action="/search" method="get" role="searchbox">
+                <input class="form-control me-2 search-box" type="search" name="location" placeholder="Search destinations" aria-label="Search">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;<strong>Search</strong></button>
             </form>
         </div>
     </div>
