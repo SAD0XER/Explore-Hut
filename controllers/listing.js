@@ -3,12 +3,12 @@ const Listing = require("../models/listing.js");
 // Index Route Callback to see all Listings.
 module.exports.index = async (req, res) => {
     const allListings = await Listing.find({}); //To extract all listing data from database.
-    res.render("../views/listings/index.ejs", { listings: allListings }); //Passing all listings to index.ejs with key name as `listings`.
+    res.render("listings/index.ejs", { listings: allListings }); //Passing all listings to index.ejs with key name as `listings`.
 };
 
 // New Form to Create new Listings.
 module.exports.newListingForm = (req, res) => {
-    res.render("../views/listings/new.ejs");
+    res.render("listings/new.ejs");
 };
 
 // Show Listing Details.
@@ -23,7 +23,7 @@ module.exports.showListingDetails = async (req, res) => {
         req.flash("error", "Requested list does not exist!");
         res.redirect("/");
     }
-    res.render("../views/listings/show.ejs", { listing });
+    res.render("listings/show.ejs", { listing });
 };
 
 // Create and Save new Listing in DB.
@@ -49,7 +49,7 @@ module.exports.editListingForm = async (req, res) => {
     }
 
     let previewImage = listing.image.url.replace("/upload", "/upload/c_auto,h_200,w_400");
-    res.render("../views/listings/edit.ejs", { listing, previewImage });
+    res.render("listings/edit.ejs", { listing, previewImage });
 };
 
 // Update Edited Listing data in DB.
@@ -79,7 +79,7 @@ module.exports.deleteListing = async (req, res) => {
 module.exports.filterListing = async (req, res) => {
     const { category } = req.query;
     const filteredListing = await Listing.find({ category });
-    res.render("../views/listings/index.ejs", { listings: filteredListing });
+    res.render("listings/index.ejs", { listings: filteredListing });
 };
 
 // Search Route using search box.

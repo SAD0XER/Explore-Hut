@@ -11,7 +11,7 @@ const upload = multer({ storage }); // creates destination folder to store uploa
 router.get("/search", wrapAsync(listingController.searchListing));
 
 // Filter Route using Category.
-router.route("/filter").get(wrapAsync(listingController.filterListing));
+router.get("/filter", wrapAsync(listingController.filterListing));
 
 // New Listing Form Route: /new - To create a new listing.
 router.get("/new", isLoggedIn, listingController.newListingForm);
