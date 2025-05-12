@@ -7,6 +7,9 @@ const multer = require("multer"); // pkg to parse 'multipart/form-data', used to
 const { storage } = require("../config/cloudConfig.js");
 const upload = multer({ storage }); // creates destination folder to store uploaded files.
 
+// Search Route using search box.
+router.get("/search", wrapAsync(listingController.searchListing));
+
 // Filter Route using Category.
 router.route("/filter").get(wrapAsync(listingController.filterListing));
 
